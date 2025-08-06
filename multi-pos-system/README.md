@@ -1,326 +1,585 @@
 # Multi POS System
 
-A comprehensive Point of Sale (POS) system built with Laravel and AdminLTE that allows multiple stores to manage their business operations through a modern web interface.
+Un sistema integral de Punto de Venta (POS) construido con Laravel y AdminLTE que permite a múltiples tiendas gestionar sus operaciones comerciales a través de una moderna interfaz web.
 
-## Features
+## 🌟 Características Principales
 
-### 🏪 Multi-Store Management
-- Each store owner can register and manage their own store
-- Isolated data per store with secure access controls
-- Store setup wizard for new registrations
-- Store profile management with logo upload
+### 🏪 Gestión Multi-Tienda
+- Cada propietario puede registrar y gestionar su propia tienda
+- Datos aislados por tienda con controles de acceso seguros
+- Asistente de configuración para nuevos registros
+- Gestión de perfil de tienda con carga de logo
 
-### 🔐 Authentication & Authorization
-- **Google OAuth Integration** - Quick sign-up with Google accounts
-- **Traditional Email/Password** - Standard authentication method
-- **Role-based Access Control** - Store owners, employees, and super admin roles
-- **Secure Middleware** - Protected routes with proper authorization
+### 🔐 Autenticación y Autorización
+- **Integración con Google OAuth** - Registro rápido con cuentas de Google
+- **Email/Contraseña tradicional** - Método de autenticación estándar
+- **Control de acceso basado en roles** - Propietarios, empleados y super administrador
+- **Middleware seguro** - Rutas protegidas con autorización apropiada
 
-### 📦 Inventory Management
-- **Product Management** - Add, edit, delete products with images
-- **Category Organization** - Organize products by categories
-- **Stock Tracking** - Real-time inventory with low stock alerts
-- **Batch Operations** - Manage multiple products efficiently
+### 📦 Gestión de Inventario
+- **Gestión de productos** - Agregar, editar, eliminar productos con imágenes
+- **Organización por categorías** - Organizar productos por categorías
+- **Seguimiento de stock** - Inventario en tiempo real con alertas de stock bajo
+- **Operaciones por lotes** - Gestionar múltiples productos eficientemente
 
-### 💰 Point of Sale (POS)
-- **Modern POS Interface** - Clean, responsive design for quick sales
-- **Product Search** - Quick product lookup by name or barcode
-- **Shopping Cart** - Add/remove items with quantity adjustments
-- **Multiple Payment Methods** - Cash, card, bank transfer, and others
-- **Customer Management** - Optional customer assignment to sales
-- **Real-time Calculations** - Automatic totals, tax, and change calculation
+### 💰 Punto de Venta (POS)
+- **Interfaz POS moderna** - Diseño limpio y responsivo para ventas rápidas
+- **Búsqueda de productos** - Búsqueda rápida por nombre o código de barras
+- **Carrito de compras** - Agregar/quitar artículos con ajustes de cantidad
+- **Múltiples métodos de pago** - Efectivo, tarjeta, transferencia y otros
+- **Gestión de clientes** - Asignación opcional de clientes a ventas
+- **Cálculos en tiempo real** - Totales automáticos, impuestos y cambio
 
-### 🧾 Sales & Reporting
-- **Sales History** - Complete transaction records
-- **Receipt Generation** - Print or PDF receipts
-- **Analytics Dashboard** - Sales trends, top products, and KPIs
-- **Filtering & Search** - Find specific sales by date, customer, or product
-- **Export Options** - Generate reports for analysis
+### 🧾 Ventas y Reportes
+- **Historial de ventas** - Registros completos de transacciones
+- **Generación de recibos** - Imprimir o generar PDFs
+- **Dashboard de analíticas** - Tendencias de ventas, productos principales y KPIs
+- **Filtrado y búsqueda** - Encontrar ventas específicas por fecha, cliente o producto
+- **Opciones de exportación** - Generar reportes para análisis
 
-### 👥 Customer Management
-- **Customer Database** - Store customer information
-- **Purchase History** - Track customer buying patterns
-- **Contact Management** - Email, phone, and address records
+### 👥 Gestión de Clientes
+- **Base de datos de clientes** - Almacenar información de clientes
+- **Historial de compras** - Seguimiento de patrones de compra
+- **Gestión de contactos** - Registros de email, teléfono y dirección
 
-### 🎛️ Admin Panel (Super Admin)
-- **Store Monitoring** - View all registered stores
-- **Payment Management** - Track subscription payments
-- **Store Suspension** - Suspend/activate stores based on payment status
-- **System Analytics** - Overall platform statistics
+### 🎛️ Panel de Administración (Super Admin)
+- **Monitoreo de tiendas** - Ver todas las tiendas registradas
+- **Gestión de pagos** - Seguimiento de pagos de suscripción
+- **Suspensión de tiendas** - Suspender/activar tiendas según estado de pago
+- **Analíticas del sistema** - Estadísticas generales de la plataforma
 
-### 🎨 Modern UI/UX
-- **AdminLTE Integration** - Professional dashboard interface
-- **Bootstrap Framework** - Responsive and mobile-friendly
-- **Interactive Components** - Modern JavaScript interactions
-- **Chart.js Integration** - Beautiful data visualizations
-- **FontAwesome Icons** - Comprehensive icon library
+### 🎨 UI/UX Moderna
+- **Integración AdminLTE** - Interfaz profesional de dashboard
+- **Framework Bootstrap** - Responsivo y compatible con móviles
+- **Componentes interactivos** - Interacciones modernas con JavaScript
+- **Integración Chart.js** - Hermosas visualizaciones de datos
+- **Iconos FontAwesome** - Biblioteca completa de iconos
 
-## Technology Stack
+## 🛠️ Stack Tecnológico
 
 - **Backend**: Laravel 11 (PHP 8.4)
 - **Frontend**: AdminLTE 3, Bootstrap 5, jQuery
-- **Database**: SQLite (easily configurable for MySQL/PostgreSQL)
-- **Authentication**: Laravel Socialite (Google OAuth)
-- **PDF Generation**: DOMPDF
-- **File Storage**: Laravel Storage with public disk
-- **Charts**: Chart.js for analytics visualization
+- **Base de datos**: SQLite (configurable para MySQL/PostgreSQL)
+- **Autenticación**: Laravel Socialite (Google OAuth)
+- **Generación PDF**: DOMPDF
+- **Almacenamiento**: Laravel Storage con disco público
+- **Gráficos**: Chart.js para visualizaciones
 
-## Installation
+## 📋 Requisitos del Sistema
 
-### Prerequisites
-- PHP 8.4 or higher
-- Composer
-- Node.js and NPM
-- SQLite (or MySQL/PostgreSQL)
+### Requisitos Mínimos
+- **PHP**: 8.1 o superior (recomendado 8.4)
+- **Composer**: Última versión
+- **Node.js**: 16 o superior
+- **NPM**: 7 o superior
+- **Base de datos**: SQLite, MySQL 8.0+ o PostgreSQL 13+
+- **Extensiones PHP**: 
+  - BCMath
+  - Ctype
+  - cURL
+  - DOM
+  - Fileinfo
+  - JSON
+  - Mbstring
+  - OpenSSL
+  - PCRE
+  - PDO
+  - Tokenizer
+  - XML
+  - Zip
 
-### Setup Instructions
+### Hosting Recomendado
+- **Memoria RAM**: Mínimo 512MB (recomendado 1GB+)
+- **Espacio en disco**: Mínimo 500MB para el código + espacio para uploads
+- **PHP**: Versión 8.1+ con todas las extensiones
+- **Base de datos**: MySQL 8.0+ o PostgreSQL 13+
+- **SSL**: Certificado SSL para HTTPS (requerido para OAuth)
 
-1. **Clone the repository**
+## 🚀 Guía de Instalación Paso a Paso
+
+### Paso 1: Preparar el Entorno de Desarrollo
+
+#### En Windows:
+1. **Instalar XAMPP**:
+   - Descargar desde https://www.apachefriends.org/
+   - Instalar con PHP 8.1+, MySQL y Apache
+   - Iniciar Apache y MySQL desde el panel de control
+
+2. **Instalar Composer**:
+   - Descargar desde https://getcomposer.org/download/
+   - Ejecutar el instalador y seguir las instrucciones
+   - Verificar en CMD: `composer --version`
+
+3. **Instalar Node.js**:
+   - Descargar desde https://nodejs.org/
+   - Instalar la versión LTS
+   - Verificar en CMD: `node --version` y `npm --version`
+
+#### En macOS:
+1. **Instalar Homebrew** (si no lo tienes):
    ```bash
-   git clone <repository-url>
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. **Instalar PHP y Composer**:
+   ```bash
+   brew install php@8.4 composer
+   brew install mysql # O usar MAMP
+   ```
+
+3. **Instalar Node.js**:
+   ```bash
+   brew install node
+   ```
+
+#### En Linux (Ubuntu/Debian):
+1. **Actualizar el sistema**:
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   ```
+
+2. **Instalar PHP y extensiones**:
+   ```bash
+   sudo apt install php8.4 php8.4-cli php8.4-mbstring php8.4-xml php8.4-curl php8.4-zip php8.4-bcmath php8.4-sqlite3 php8.4-mysql unzip curl -y
+   ```
+
+3. **Instalar Composer**:
+   ```bash
+   curl -sS https://getcomposer.org/installer | php
+   sudo mv composer.phar /usr/local/bin/composer
+   ```
+
+4. **Instalar Node.js**:
+   ```bash
+   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+   sudo apt-get install -y nodejs
+   ```
+
+5. **Instalar MySQL** (opcional):
+   ```bash
+   sudo apt install mysql-server
+   sudo mysql_secure_installation
+   ```
+
+### Paso 2: Clonar y Configurar el Proyecto
+
+1. **Clonar el repositorio**:
+   ```bash
+   git clone https://github.com/tu-usuario/multi-pos-system.git
    cd multi-pos-system
    ```
 
-2. **Install PHP dependencies**
+2. **Instalar dependencias de PHP**:
    ```bash
    composer install
    ```
 
-3. **Install Node.js dependencies**
+3. **Instalar dependencias de Node.js**:
    ```bash
    npm install
    ```
 
-4. **Environment Configuration**
+4. **Configurar el archivo de entorno**:
    ```bash
    cp .env.example .env
+   ```
+
+5. **Generar la clave de aplicación**:
+   ```bash
    php artisan key:generate
    ```
 
-5. **Configure Google OAuth** (Optional but recommended)
-   - Go to [Google Cloud Console](https://console.cloud.google.com/)
-   - Create a new project or select existing one
-   - Enable Google+ API
-   - Create OAuth 2.0 credentials
-   - Update `.env` file:
+### Paso 3: Configurar la Base de Datos
+
+#### Opción A: SQLite (Más fácil para desarrollo)
+1. **Crear el archivo de base de datos**:
+   ```bash
+   touch database/database.sqlite
    ```
-   GOOGLE_CLIENT_ID=your_google_client_id
-   GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+2. **En el archivo .env, asegurar que esté configurado**:
+   ```
+   DB_CONNECTION=sqlite
+   DB_DATABASE=database/database.sqlite
+   ```
+
+#### Opción B: MySQL (Recomendado para producción)
+1. **Crear una base de datos**:
+   ```sql
+   CREATE DATABASE multipos_system;
+   CREATE USER 'multipos_user'@'localhost' IDENTIFIED BY 'tu_password_segura';
+   GRANT ALL PRIVILEGES ON multipos_system.* TO 'multipos_user'@'localhost';
+   FLUSH PRIVILEGES;
+   ```
+
+2. **Configurar en .env**:
+   ```
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=multipos_system
+   DB_USERNAME=multipos_user
+   DB_PASSWORD=tu_password_segura
+   ```
+
+### Paso 4: Configurar Google OAuth (Opcional pero Recomendado)
+
+1. **Ir a Google Cloud Console**:
+   - Visitar https://console.cloud.google.com/
+   - Crear un nuevo proyecto o seleccionar uno existente
+
+2. **Habilitar APIs**:
+   - Buscar "Google+ API" y habilitarla
+   - Ir a "Credenciales" > "Crear credenciales" > "ID de cliente OAuth 2.0"
+
+3. **Configurar OAuth**:
+   - Tipo de aplicación: "Aplicación web"
+   - URIs de redirección autorizadas: `http://tu-dominio.com/auth/google/callback`
+   - Para desarrollo local: `http://localhost:8000/auth/google/callback`
+
+4. **Actualizar .env**:
+   ```
+   GOOGLE_CLIENT_ID=tu_google_client_id
+   GOOGLE_CLIENT_SECRET=tu_google_client_secret
    GOOGLE_REDIRECT_URI=http://localhost:8000/auth/google/callback
    ```
 
-6. **Database Setup**
+### Paso 5: Ejecutar Migraciones y Seeders
+
+1. **Ejecutar migraciones**:
    ```bash
    php artisan migrate
+   ```
+
+2. **Crear usuario super administrador**:
+   ```bash
    php artisan db:seed --class=SuperAdminSeeder
    ```
 
-7. **Storage Link**
+3. **Crear enlace de almacenamiento**:
    ```bash
    php artisan storage:link
    ```
 
-8. **Start the development server**
+### Paso 6: Configurar Permisos (Solo Linux/macOS)
+
+```bash
+sudo chown -R www-data:www-data storage bootstrap/cache
+sudo chmod -R 775 storage bootstrap/cache
+```
+
+O si usas tu usuario:
+```bash
+chmod -R 775 storage bootstrap/cache
+```
+
+### Paso 7: Probar en Desarrollo
+
+1. **Iniciar el servidor de desarrollo**:
    ```bash
    php artisan serve
    ```
 
-## Default Credentials
+2. **Acceder a la aplicación**:
+   - Abrir navegador en http://localhost:8000
+   - Probar login con las credenciales del archivo `database_info_plain.txt`
 
-### Super Admin
-- **Email**: admin@multipos.com
-- **Password**: admin123
+## 🌐 Despliegue en Producción
 
-The super admin can access the admin panel to manage all stores and monitor the system.
+### Preparación para Producción
 
-## Usage Guide
+1. **Optimizar la aplicación**:
+   ```bash
+   composer install --optimize-autoloader --no-dev
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+   npm run build
+   ```
 
-### For Store Owners
+2. **Configurar .env para producción**:
+   ```
+   APP_ENV=production
+   APP_DEBUG=false
+   APP_URL=https://tu-dominio.com
+   
+   # Base de datos de producción
+   DB_CONNECTION=mysql
+   DB_HOST=tu_host_mysql
+   DB_PORT=3306
+   DB_DATABASE=tu_base_datos
+   DB_USERNAME=tu_usuario
+   DB_PASSWORD=tu_password_segura
+   
+   # Configuración de mail
+   MAIL_MAILER=smtp
+   MAIL_HOST=tu_servidor_smtp
+   MAIL_PORT=587
+   MAIL_USERNAME=tu_email
+   MAIL_PASSWORD=tu_password_email
+   MAIL_ENCRYPTION=tls
+   
+   # Google OAuth para producción
+   GOOGLE_REDIRECT_URI=https://tu-dominio.com/auth/google/callback
+   ```
 
-1. **Registration**
-   - Register with email/password or Google OAuth
-   - Complete store setup form
-   - Start adding products and categories
+### Hosting Compartido (cPanel)
 
-2. **Product Management**
-   - Navigate to Products section
-   - Create categories first
-   - Add products with details, pricing, and stock quantities
-   - Upload product images
+1. **Subir archivos**:
+   - Comprimir el proyecto (excepto node_modules)
+   - Subir al directorio público del hosting
+   - Descomprimir en el servidor
 
-3. **Making Sales**
-   - Go to POS System
-   - Search and add products to cart
-   - Select customer (optional)
-   - Choose payment method
-   - Process sale and print receipt
+2. **Configurar el directorio público**:
+   - Mover contenido de `/public` al directorio público del hosting
+   - Actualizar `index.php` para apuntar a la carpeta correcta
 
-4. **Analytics**
-   - View dashboard for daily/monthly sales
-   - Check inventory alerts
-   - Review sales history
-   - Generate reports
+3. **Instalar dependencias** (si el hosting lo permite):
+   ```bash
+   composer install --no-dev
+   ```
 
-### For Super Admin
+4. **Configurar base de datos**:
+   - Crear base de datos desde cPanel
+   - Actualizar .env con las credenciales
+   - Ejecutar migraciones: `php artisan migrate --force`
 
-1. **Store Management**
-   - Access admin panel
-   - View all registered stores
-   - Monitor payment status
-   - Suspend/activate stores as needed
+### VPS (Servidor Virtual Privado)
 
-2. **System Monitoring**
-   - Track overall platform usage
-   - Monitor store activities
-   - Generate system-wide reports
+#### Usando Ubuntu 20.04/22.04
 
-## API Endpoints
+1. **Conectar al servidor**:
+   ```bash
+   ssh usuario@tu-servidor-ip
+   ```
 
-### Public Routes
-- `GET /` - Redirect to login
-- `GET /login` - Login page
-- `GET /register` - Registration page
-- `GET /auth/google` - Google OAuth redirect
-- `GET /auth/google/callback` - Google OAuth callback
+2. **Instalar dependencias del servidor**:
+   ```bash
+   sudo apt update
+   sudo apt install nginx mysql-server php8.4-fpm php8.4-mysql php8.4-mbstring php8.4-xml php8.4-curl php8.4-zip php8.4-bcmath unzip git -y
+   ```
 
-### Protected Routes (Authenticated Users)
-- `GET /dashboard` - Main dashboard
-- `GET /store/setup` - Store setup form
-- `POST /store/setup` - Process store setup
+3. **Configurar MySQL**:
+   ```bash
+   sudo mysql_secure_installation
+   sudo mysql -u root -p
+   ```
+   ```sql
+   CREATE DATABASE multipos_production;
+   CREATE USER 'multipos'@'localhost' IDENTIFIED BY 'password_muy_segura';
+   GRANT ALL ON multipos_production.* TO 'multipos'@'localhost';
+   FLUSH PRIVILEGES;
+   EXIT;
+   ```
 
-### Store Management Routes
-- `GET /store` - View store details
-- `GET /store/edit` - Edit store form
-- `PUT /store` - Update store details
+4. **Clonar y configurar el proyecto**:
+   ```bash
+   cd /var/www
+   sudo git clone https://github.com/tu-usuario/multi-pos-system.git
+   sudo chown -R www-data:www-data multi-pos-system
+   cd multi-pos-system
+   sudo -u www-data composer install --no-dev
+   sudo -u www-data cp .env.example .env
+   sudo -u www-data php artisan key:generate
+   ```
 
-### Product Management
-- `GET /products` - List products
-- `POST /products` - Create product
-- `GET /products/{id}` - View product
-- `PUT /products/{id}` - Update product
-- `DELETE /products/{id}` - Delete product
+5. **Configurar Nginx**:
+   ```bash
+   sudo nano /etc/nginx/sites-available/multipos
+   ```
+   
+   Contenido del archivo:
+   ```nginx
+   server {
+       listen 80;
+       server_name tu-dominio.com;
+       root /var/www/multi-pos-system/public;
+       
+       add_header X-Frame-Options "SAMEORIGIN";
+       add_header X-Content-Type-Options "nosniff";
+       
+       index index.php;
+       
+       charset utf-8;
+       
+       location / {
+           try_files $uri $uri/ /index.php?$query_string;
+       }
+       
+       location = /favicon.ico { access_log off; log_not_found off; }
+       location = /robots.txt  { access_log off; log_not_found off; }
+       
+       error_page 404 /index.php;
+       
+       location ~ \.php$ {
+           fastcgi_pass unix:/var/run/php/php8.4-fpm.sock;
+           fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+           include fastcgi_params;
+       }
+       
+       location ~ /\.(?!well-known).* {
+           deny all;
+       }
+   }
+   ```
 
-### POS System
-- `GET /pos` - POS interface
-- `GET /pos/search-products` - Search products (AJAX)
-- `POST /pos/process-sale` - Process sale (AJAX)
+6. **Habilitar el sitio**:
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/multipos /etc/nginx/sites-enabled/
+   sudo nginx -t
+   sudo systemctl restart nginx
+   ```
 
-### Sales & Reports
-- `GET /sales` - Sales history
-- `GET /sales/{id}` - View sale details
-- `GET /sales/{id}/print` - Print receipt
-- `GET /sales/{id}/pdf` - Download PDF receipt
-- `GET /reports` - Reports dashboard
+7. **Configurar SSL con Let's Encrypt**:
+   ```bash
+   sudo apt install certbot python3-certbot-nginx
+   sudo certbot --nginx -d tu-dominio.com
+   ```
 
-### Admin Routes (Super Admin Only)
-- `GET /admin/dashboard` - Admin dashboard
-- `GET /admin/stores` - List all stores
-- `POST /admin/stores/{id}/suspend` - Suspend store
-- `POST /admin/stores/{id}/activate` - Activate store
+8. **Ejecutar migraciones**:
+   ```bash
+   cd /var/www/multi-pos-system
+   sudo -u www-data php artisan migrate --force
+   sudo -u www-data php artisan db:seed --class=SuperAdminSeeder
+   sudo -u www-data php artisan storage:link
+   ```
 
-## File Structure
+### Servicios en la Nube
 
+#### DigitalOcean App Platform
+1. Conectar repositorio de GitHub
+2. Configurar variables de entorno
+3. Configurar base de datos gestionada
+4. Desplegar automáticamente
+
+#### AWS Elastic Beanstalk
+1. Crear aplicación Laravel
+2. Configurar RDS para MySQL
+3. Configurar variables de entorno
+4. Desplegar zip del proyecto
+
+#### Heroku
+1. Instalar Heroku CLI
+2. Crear aplicación: `heroku create tu-app-name`
+3. Agregar MySQL: `heroku addons:create cleardb:ignite`
+4. Configurar variables: `heroku config:set APP_KEY=...`
+5. Desplegar: `git push heroku main`
+
+## 🔧 Configuración Post-Instalación
+
+### 1. Configurar Tareas Programadas (Opcional)
+```bash
+# Agregar al crontab del servidor
+* * * * * cd /ruta/al/proyecto && php artisan schedule:run >> /dev/null 2>&1
 ```
-multi-pos-system/
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   │   ├── Auth/GoogleController.php
-│   │   │   ├── DashboardController.php
-│   │   │   ├── ProductController.php
-│   │   │   ├── PosController.php
-│   │   │   ├── StoreController.php
-│   │   │   └── Admin/AdminController.php
-│   │   ├── Middleware/
-│   │   │   ├── CheckStoreAccess.php
-│   │   │   └── SuperAdminMiddleware.php
-│   │   └── Policies/ProductPolicy.php
-│   └── Models/
-│       ├── User.php
-│       ├── Store.php
-│       ├── Product.php
-│       ├── Category.php
-│       ├── Customer.php
-│       ├── Sale.php
-│       └── SaleItem.php
-├── database/
-│   ├── migrations/
-│   └── seeders/SuperAdminSeeder.php
-├── resources/
-│   └── views/
-│       ├── layouts/app.blade.php
-│       ├── dashboard/
-│       ├── store/
-│       ├── pos/
-│       └── auth/
-└── routes/web.php
+
+### 2. Configurar Queue Workers (Para mejor rendimiento)
+```bash
+# Instalar supervisor
+sudo apt install supervisor
+
+# Crear configuración
+sudo nano /etc/supervisor/conf.d/laravel-worker.conf
 ```
 
-## Security Features
+### 3. Optimización de Rendimiento
+```bash
+# Cache de configuración
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
 
-- **CSRF Protection** - All forms protected against CSRF attacks
-- **SQL Injection Prevention** - Eloquent ORM with parameter binding
-- **XSS Protection** - Blade template escaping
-- **Store Isolation** - Users can only access their own store data
-- **Role-based Access** - Proper authorization checks
-- **File Upload Security** - Image validation and secure storage
+# Optimizar autoloader
+composer dump-autoload --optimize
+```
 
-## Customization
+## 📊 Monitoreo y Mantenimiento
 
-### Adding New Payment Methods
-Edit the payment method enum in the Sale model and update the POS interface dropdown.
+### Respaldos Automáticos
+```bash
+#!/bin/bash
+# Script de respaldo diario
+DATE=$(date +%Y%m%d_%H%M%S)
+mysqldump -u usuario -p base_datos > backup_$DATE.sql
+tar -czf backup_files_$DATE.tar.gz /var/www/multi-pos-system/storage
+```
 
-### Implementing Tax Calculation
-Modify the POS controller's `processSale` method to include tax logic based on your requirements.
+### Logs del Sistema
+- **Laravel logs**: `storage/logs/laravel.log`
+- **Nginx logs**: `/var/log/nginx/`
+- **PHP logs**: `/var/log/php8.4-fpm.log`
 
-### Custom Receipt Templates
-Create custom views for receipt printing in `resources/views/sales/` directory.
+### Actualizaciones
+```bash
+# Actualizar el código
+git pull origin main
+composer install --no-dev
+php artisan migrate --force
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
 
-### Additional Reports
-Add new report methods to controllers and create corresponding views.
+## 🔍 Solución de Problemas Comunes
 
-## Support & Maintenance
+### Error 500 - Internal Server Error
+1. Verificar permisos de carpetas
+2. Revisar logs de error
+3. Verificar configuración de .env
+4. Verificar que todas las extensiones PHP estén instaladas
 
-### Database Maintenance
-- Regular backups recommended
-- Monitor disk space for uploaded images
-- Archive old sales data as needed
+### Problemas de Base de Datos
+1. Verificar credenciales en .env
+2. Verificar que la base de datos existe
+3. Ejecutar migraciones: `php artisan migrate`
 
-### Performance Optimization
-- Enable query caching for production
-- Optimize images and assets
-- Consider CDN for static assets
-- Database indexing for large datasets
+### Problemas de Autenticación Google
+1. Verificar URLs de redirección en Google Console
+2. Verificar que las credenciales estén correctas en .env
+3. Verificar que Google+ API esté habilitada
 
-### Scaling Considerations
-- Move to MySQL/PostgreSQL for larger datasets
-- Implement Redis for session management
-- Use queue workers for heavy operations
-- Consider microservices architecture for enterprise use
+### Problemas de Rendimiento
+1. Habilitar caché de configuración
+2. Optimizar consultas de base de datos
+3. Usar CDN para archivos estáticos
+4. Configurar Redis para sesiones
 
-## License
+## 📚 Recursos Adicionales
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+- **Documentación de Laravel**: https://laravel.com/docs
+- **AdminLTE**: https://adminlte.io/docs
+- **Bootstrap**: https://getbootstrap.com/docs
+- **Google OAuth Setup**: https://developers.google.com/identity/protocols/oauth2
 
-## Contributing
+## 🤝 Soporte y Contribuciones
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+### Reportar Problemas
+1. Buscar problemas existentes en GitHub Issues
+2. Crear un nuevo issue con:
+   - Descripción detallada del problema
+   - Pasos para reproducir
+   - Información del entorno
+   - Logs de error relevantes
 
-## Changelog
+### Contribuir
+1. Fork del repositorio
+2. Crear rama para la nueva característica
+3. Hacer cambios y pruebas
+4. Enviar Pull Request con descripción detallada
 
-### Version 1.0.0
-- Initial release with core POS functionality
-- Multi-store support
-- Google OAuth integration
-- AdminLTE interface
-- Product and inventory management
-- Sales processing and reporting
-- Admin panel for system management
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
+
+## 🏆 Reconocimientos
+
+Construido con:
+- Laravel Framework
+- AdminLTE Template
+- Bootstrap CSS Framework
+- Chart.js para visualizaciones
+- FontAwesome para iconos
 
 ---
 
-**Multi POS System** - Empowering businesses with modern point-of-sale technology.
+**Multi POS System** - Potenciando negocios con tecnología moderna de punto de venta.
