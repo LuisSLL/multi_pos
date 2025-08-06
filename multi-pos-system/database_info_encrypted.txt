@@ -1,0 +1,160 @@
+MULTI POS SYSTEM - DATABASE INFORMATION (ENCRYPTED PASSWORDS)
+================================================================
+
+DATABASE CONFIGURATION:
+------------------------
+Type: SQLite
+File: database/database.sqlite
+Path: /workspace/multi-pos-system/database/database.sqlite
+
+SYSTEM USERS (ENCRYPTED PASSWORDS):
+-----------------------------------
+
+SUPER ADMIN:
+-----------
+Name: Super Admin
+Email: admin@multipos.com
+Password (Encrypted): $2y$12$icB7PG3w0xI5wde6qwo.YeCLJJqLf.rWJXvXBBQhY9HkRHu9H9EnC
+User Type: super_admin
+Status: Active
+Created: 2025-08-05 23:42:00
+
+DATABASE TABLES STRUCTURE:
+--------------------------
+
+USERS TABLE:
+- id (Primary Key)
+- name
+- email (Unique)
+- email_verified_at
+- password (Encrypted with bcrypt)
+- store_id (Foreign Key - references stores.id)
+- user_type (super_admin, store_owner, employee)
+- google_id (For OAuth)
+- is_active (Boolean)
+- remember_token
+- created_at
+- updated_at
+
+STORES TABLE:
+- id (Primary Key)
+- name
+- logo (File path)
+- address
+- phone
+- email
+- description
+- is_active (Boolean)
+- payment_due_date
+- monthly_fee (Default: 29.99)
+- payment_status (active, pending, overdue, suspended)
+- created_at
+- updated_at
+
+CATEGORIES TABLE:
+- id (Primary Key)
+- store_id (Foreign Key)
+- name
+- description
+- is_active (Boolean)
+- created_at
+- updated_at
+
+PRODUCTS TABLE:
+- id (Primary Key)
+- store_id (Foreign Key)
+- category_id (Foreign Key)
+- name
+- code (Unique)
+- description
+- cost_price
+- selling_price
+- stock_quantity
+- min_stock_level
+- image (File path)
+- is_active (Boolean)
+- created_at
+- updated_at
+
+CUSTOMERS TABLE:
+- id (Primary Key)
+- store_id (Foreign Key)
+- name
+- email
+- phone
+- address
+- birth_date
+- is_active (Boolean)
+- created_at
+- updated_at
+
+SALES TABLE:
+- id (Primary Key)
+- store_id (Foreign Key)
+- user_id (Foreign Key - Cashier)
+- customer_id (Foreign Key - Optional)
+- invoice_number (Unique)
+- subtotal
+- tax_amount
+- discount_amount
+- total_amount
+- paid_amount
+- change_amount
+- payment_method (cash, card, transfer, other)
+- status (completed, pending, cancelled)
+- notes
+- created_at
+- updated_at
+
+SALE_ITEMS TABLE:
+- id (Primary Key)
+- sale_id (Foreign Key)
+- product_id (Foreign Key)
+- quantity
+- unit_price
+- total_price
+- created_at
+- updated_at
+
+PERMISSION TABLES (Spatie Package):
+- permissions
+- roles
+- model_has_permissions
+- model_has_roles
+- role_has_permissions
+
+LARAVEL SYSTEM TABLES:
+- cache
+- cache_locks
+- jobs
+- job_batches
+- failed_jobs
+- sessions
+
+CONNECTION DETAILS:
+------------------
+Database Driver: sqlite
+Connection: Default Laravel SQLite connection
+Authentication: File-based (no username/password required)
+Encryption: Laravel's built-in bcrypt for passwords
+
+BACKUP INFORMATION:
+------------------
+To backup the database, simply copy the file:
+cp database/database.sqlite database/backup_$(date +%Y%m%d_%H%M%S).sqlite
+
+To restore:
+cp database/backup_YYYYMMDD_HHMMSS.sqlite database/database.sqlite
+
+SECURITY NOTES:
+--------------
+- All passwords are encrypted using Laravel's bcrypt hashing
+- CSRF tokens protect all forms
+- SQL injection prevention via Eloquent ORM
+- Store data isolation implemented
+- File uploads are validated and secured
+- Session data is encrypted
+
+Generated on: 2025-08-05 23:42:00 UTC
+Laravel Version: 11.21.0
+PHP Version: 8.4.5

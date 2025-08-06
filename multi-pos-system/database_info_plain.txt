@@ -1,0 +1,214 @@
+MULTI POS SYSTEM - DATABASE INFORMATION (PLAIN TEXT PASSWORDS)
+================================================================
+⚠️  WARNING: This file contains plain text passwords. Keep it secure and delete after use!
+
+DATABASE CONFIGURATION:
+------------------------
+Type: SQLite
+File: database/database.sqlite
+Path: /workspace/multi-pos-system/database/database.sqlite
+
+SYSTEM USERS (PLAIN TEXT PASSWORDS):
+------------------------------------
+
+SUPER ADMIN:
+-----------
+Name: Super Admin
+Email: admin@multipos.com
+Password: admin123
+User Type: super_admin
+Status: Active
+Created: 2025-08-05 23:42:00
+
+DEMO STORE OWNER (Example - not created yet):
+--------------------------------------------
+Name: John Doe
+Email: store@example.com
+Password: store123
+User Type: store_owner
+Status: Active
+Store: Demo Store
+
+DEMO EMPLOYEE (Example - not created yet):
+-----------------------------------------
+Name: Jane Smith
+Email: employee@example.com
+Password: employee123
+User Type: employee
+Status: Active
+Store: Demo Store
+
+LOGIN INSTRUCTIONS:
+------------------
+
+1. SUPER ADMIN LOGIN:
+   - URL: http://localhost:8000/login
+   - Email: admin@multipos.com
+   - Password: admin123
+   - Access: Full system administration
+
+2. GOOGLE OAUTH LOGIN:
+   - URL: http://localhost:8000/auth/google
+   - Requires Google OAuth configuration in .env file
+   - Automatically creates store_owner account
+
+3. REGULAR REGISTRATION:
+   - URL: http://localhost:8000/register
+   - Creates store_owner account
+   - Requires store setup after registration
+
+STORE SETUP PROCESS:
+-------------------
+After registration, new users must complete store setup:
+- Store Name
+- Store Logo (optional)
+- Store Address
+- Phone Number
+- Email (optional)
+- Description (optional)
+
+SAMPLE DATA FOR TESTING:
+-----------------------
+
+SAMPLE STORE:
+Name: Demo Electronics Store
+Address: 123 Main Street, City, State 12345
+Phone: (555) 123-4567
+Email: contact@demostore.com
+Description: Electronics and gadgets store
+
+SAMPLE CATEGORIES:
+- Electronics
+- Computers
+- Mobile Phones
+- Accessories
+- Home Appliances
+
+SAMPLE PRODUCTS:
+1. iPhone 15 Pro
+   Code: IP15P001
+   Category: Mobile Phones
+   Cost: $800.00
+   Selling Price: $999.00
+   Stock: 25
+
+2. Samsung Galaxy S24
+   Code: SGS24001
+   Category: Mobile Phones
+   Cost: $700.00
+   Selling Price: $899.00
+   Stock: 30
+
+3. MacBook Air M3
+   Code: MBA3001
+   Category: Computers
+   Cost: $1000.00
+   Selling Price: $1299.00
+   Stock: 15
+
+4. Wireless Headphones
+   Code: WH001
+   Category: Accessories
+   Cost: $50.00
+   Selling Price: $79.99
+   Stock: 100
+
+SAMPLE CUSTOMERS:
+1. Robert Johnson
+   Email: robert.j@email.com
+   Phone: (555) 234-5678
+   Address: 456 Oak Avenue, City, State
+
+2. Maria Garcia
+   Email: maria.garcia@email.com
+   Phone: (555) 345-6789
+   Address: 789 Pine Street, City, State
+
+PAYMENT METHODS AVAILABLE:
+-------------------------
+- Cash
+- Card (Credit/Debit)
+- Bank Transfer
+- Other
+
+DEFAULT SYSTEM SETTINGS:
+-----------------------
+- Monthly Fee: $29.99
+- Tax Rate: 0% (configurable in code)
+- Default Stock Alert Level: 5 units
+- Invoice Format: INV-[STORE_ID]-[NUMBER]
+- Currency: USD ($)
+
+TESTING SCENARIOS:
+-----------------
+
+1. STORE OWNER WORKFLOW:
+   - Register new account
+   - Complete store setup
+   - Add product categories
+   - Add products with images
+   - Add customers
+   - Process sales through POS
+   - View reports and analytics
+
+2. SUPER ADMIN WORKFLOW:
+   - Login as super admin
+   - View all stores
+   - Monitor payment status
+   - Suspend/activate stores
+   - View system analytics
+
+3. POS SYSTEM TESTING:
+   - Search products
+   - Add items to cart
+   - Adjust quantities
+   - Select payment method
+   - Process sale
+   - Print receipt
+
+GOOGLE OAUTH SETUP (Optional):
+-----------------------------
+For Google OAuth functionality, configure these in .env:
+
+GOOGLE_CLIENT_ID=your_google_client_id_here
+GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+GOOGLE_REDIRECT_URI=http://localhost:8000/auth/google/callback
+
+Steps to get Google OAuth credentials:
+1. Go to Google Cloud Console
+2. Create new project or select existing
+3. Enable Google+ API
+4. Create OAuth 2.0 credentials
+5. Add authorized redirect URI
+6. Copy Client ID and Secret to .env
+
+FILE UPLOAD LOCATIONS:
+---------------------
+- Store Logos: storage/app/public/logos/
+- Product Images: storage/app/public/products/
+- Public Access: /storage/logos/ and /storage/products/
+
+DEVELOPMENT URLS:
+----------------
+- Main Application: http://localhost:8000
+- Login Page: http://localhost:8000/login
+- Registration: http://localhost:8000/register
+- POS System: http://localhost:8000/pos
+- Admin Panel: http://localhost:8000/admin/dashboard
+- Store Setup: http://localhost:8000/store/setup
+
+IMPORTANT NOTES:
+---------------
+- This is a development environment
+- SQLite database is used for simplicity
+- All passwords should be changed in production
+- Enable HTTPS in production
+- Configure proper email settings for production
+- Set up regular database backups
+- Monitor storage space for uploaded files
+
+⚠️  SECURITY REMINDER:
+Delete this file after reviewing the information!
+
+Generated on: 2025-08-05 23:42:00 UTC
+System Status: Development Environment Ready
